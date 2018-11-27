@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="kõhtontühinüüdburger.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:kõhtontühinüüdburger"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <RelativePanel>
+        <StackPanel Name="stack1" Orientation="Horizontal">
+
+            <Button Name="backbutton">
+                    <SymbolIcon Symbol="Back"  Width="25" Height="25"></SymbolIcon>
+            </Button>
+            <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">sample</TextBlock>
+        </StackPanel>
+        
+        <Button Name="hamburgerbutton"
+                    RelativePanel.Below="stack1" Click="Hamburgerbutton_Click">
+                <SymbolIcon Symbol="GlobalNavigationButton"  Width="25" Height="25"></SymbolIcon>
+        </Button>
+        </RelativePanel>
+
+        <SplitView Grid.Row="1" IsPaneOpen="False" DisplayMode="CompactInline" CompactPaneLength="45" Name="splitview1">
+            <SplitView.Pane>
+                <ListBox>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="CalendarDay" Width="25" Height="25"></SymbolIcon>
+                            <TextBlock Margin="10,0,0,0">item 1</TextBlock>
+
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="Globe" Width="25" Height="25"></SymbolIcon>
+                            <TextBlock Margin="10,0,0,0">item 2</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="Camera" Width="25" Height="25"></SymbolIcon>
+                            <TextBlock Margin="10,0,0,0">item 3</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="MusicInfo" Width="25" Height="25"></SymbolIcon>
+                            <TextBlock Margin="10,0,0,0">item 4</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                </ListBox>
+            </SplitView.Pane>
+        </SplitView>
+
+    </Grid>
+</Page>
